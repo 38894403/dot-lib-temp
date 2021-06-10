@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>弹幕</title>
+  <style>
+    /* 根据视频宽高设置输入框的宽度以及大容器的宽高 */
+    input {
+      width: 528px;
+      height: 40px;
+      font-size: 30px;
+    }
+
+    .div0 {
+      width: 536px;
+      height: 540px;
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="div0">
+    <video src="http://cdn.zhe51.com/asset/%E7%97%85%E6%80%81-%E8%96%9B%E4%B9%8B%E8%B0%A6.mp4" controls></video>
+    <input type="text" />
+  </div>
+</body>
+<script type="module">
+  import Bullet from "./Bullet.js";
+
+  var input = document.querySelector("input");
+  document.addEventListener("keyup", keyHandler);
+
+  function keyHandler(e) {
+    if (e.keyCode !== 13) return;
+    if (input.value.trim().length === 0) return;
+
+    var elem = new Bullet(input.value);
+    elem.appendTo(".div0");
+    input.value = "";
+  }
+</script>
+
+</html>
