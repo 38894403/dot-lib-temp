@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+	function sum(arr) {
+		var len = arr.length;
+		if (len == 0) {
+			return 0;
+		} else if (len == 1) {
+			return arr[0];
+		} else {
+			return arr[0] + sum(arr.slice(1));
+		}
+	}
+
+
+
+	// let zj7 = [6205.43, 6166, 6124.29, ]
+	let zj = [6086, 5984, 5968, 5954, 5972, 6054, 6092]
+	console.log(' :', sum(zj) / 7)
+</script>
